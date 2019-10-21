@@ -1,0 +1,27 @@
+name: Go Test
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Set up Golang
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+        id: go
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v1
+
+      - name: go test
+        env:
+          AZURE_BLOB_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_BLOB_STORAGE_ACCOUNT_NAME }}
+          AZURE_BLOB_STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_BLOB_STORAGE_ACCOUNT_KEY }}
+          AZURE_BLOB_STORAGE_CONTAINER_NAME: ${{ secrets.AZURE_BLOB_STORAGE_CONTAINER_NAME }}
+        run: |
+          GO111MODULE="on" go test -v ./...
