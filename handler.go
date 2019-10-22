@@ -119,6 +119,6 @@ func (h *Handler) handleUnexpectedError(w http.ResponseWriter, err error) {
 func (h *Handler) copyResp(resp *azblob.DownloadResponse, w http.ResponseWriter) {
 	w.Header().Set("Content-Type", resp.ContentType())
 	if _, err := io.Copy(w, resp.Body(h.RetryReaderOptions)); err != nil {
-		panic(err)
+		log.Printf("copy resp error: %v", err)
 	}
 }
