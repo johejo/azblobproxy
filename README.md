@@ -2,7 +2,7 @@
 
 Azure Blob Storage Proxy
 
-[![GitHub Actions](https://github.com/johejo/azblobproxy/workflows/Go%20Test/badge.svg)](https://github.com/johejo/azblobproxy/workflows/go-test)
+[![GitHub Actions](https://github.com/johejo/azblobproxy/workflows/Go%20Test/badge.svg)](https://github.com/johejo/azblobproxy/actions?workflows=Go+Test)
 [![GoDoc](https://godoc.org/github.com/johejo/azblobproxy?status.svg)](https://godoc.org/github.com/johejo/azblobproxy)
 
 ## Example
